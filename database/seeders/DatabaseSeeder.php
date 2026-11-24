@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
             GenderSeeder::class,
             CountrySeeder::class,
             CategorySeeder::class,
+            AdminSeeder::class,
         ]);
     }
 }
