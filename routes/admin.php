@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\CountryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [AuthController::class, 'index'])->name('admin.login');
@@ -11,6 +12,9 @@ Route::middleware('auth:admin')->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
+    Route::resource('countries', CountryController::class)
+        ->except(['show'])
+        ->names('admin.countries');
+
     Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 });
-    
