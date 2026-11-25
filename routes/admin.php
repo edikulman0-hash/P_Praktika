@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CountryController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,10 @@ Route::middleware('auth:admin')->group(function () {
     Route::resource('countries', CountryController::class)
         ->except(['show'])
         ->names('admin.countries');
+
+    Route::resource('categories', CategoryController::class)
+        ->except(['show'])
+        ->names('admin.categories');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 });

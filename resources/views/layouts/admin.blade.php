@@ -59,7 +59,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('admin.categories.index') }}" class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-list"></i>
                             <p>Категории</p>
                         </a>
