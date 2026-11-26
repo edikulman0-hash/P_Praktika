@@ -53,7 +53,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('admin.films.index') }}" class="nav-link {{ request()->routeIs('admin.films.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-video"></i>
                             <p>Фильмы</p>
                         </a>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\FilmController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [AuthController::class, 'index'])->name('admin.login');
@@ -20,6 +21,10 @@ Route::middleware('auth:admin')->group(function () {
     Route::resource('categories', CategoryController::class)
         ->except(['show'])
         ->names('admin.categories');
+
+    Route::resource('films', FilmController::class)
+        ->except(['show'])
+        ->names('admin.films');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 });
