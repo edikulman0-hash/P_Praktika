@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Theme style (AdminLTE 3) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+    @vite(['resources/css/admin.css'])
     @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -108,6 +109,7 @@
 </div>
 
 @include('admin.partials.delete-modal')
+@include('admin.partials.toast')
 
 <!-- jQuery -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>

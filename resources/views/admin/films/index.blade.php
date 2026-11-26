@@ -4,20 +4,6 @@
 @section('header', 'Управление фильмами')
 
 @section('content')
-    @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-        </div>
-    @endif
-
-    @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show">
-            {{ session('error') }}
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-        </div>
-    @endif
-
     <!-- Блок фильтрации -->
     <div class="card card-outline card-primary">
         <div class="card-body">
@@ -104,6 +90,9 @@
                                 @endforelse
                             </td>
                             <td class="text-right">
+                                <a href="{{ route('admin.films.categories.index', $film) }}" class="btn btn-info btn-sm" title="Жанры фильма">
+                                    <i class="fas fa-tags"></i>
+                                </a>
                                 <a href="{{ route('admin.films.edit', $film) }}" class="btn btn-warning btn-sm" title="Редактировать">
                                     <i class="fas fa-edit"></i>
                                 </a>

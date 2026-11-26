@@ -4,20 +4,6 @@
 @section('header', 'Управление жанрами (категориями)')
 
 @section('content')
-    @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-        </div>
-    @endif
-
-    @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show">
-            {{ session('error') }}
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-        </div>
-    @endif
-
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Список жанров</h3>

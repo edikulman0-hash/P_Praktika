@@ -1,0 +1,103 @@
+.admin-toast {
+    position: fixed;
+    top: 68px;
+    right: 20px;
+    z-index: 1060;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 280px;
+    max-width: 420px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, filter 0.15s ease;
+}
+
+.admin-toast:hover {
+    filter: brightness(1.06);
+}
+
+.admin-toast.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.admin-toast__body {
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+    font-size: 0.95rem;
+}
+
+.admin-toast__close {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-toast__ring {
+    width: 28px;
+    height: 28px;
+    transform: rotate(-90deg);
+}
+
+.admin-toast__ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.25);
+    stroke-width: 2.5;
+}
+
+.admin-toast__ring-progress {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2.5;
+    stroke-dasharray: 69.115;
+    stroke-dashoffset: 0;
+    animation: adminToastCountdown 3s linear forwards;
+}
+
+.admin-toast__timer-num {
+    position: absolute;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.admin-toast__cross {
+    position: absolute;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.admin-toast:hover .admin-toast__timer-num,
+.admin-toast:hover .admin-toast__ring {
+    opacity: 0;
+}
+
+.admin-toast:hover .admin-toast__cross {
+    opacity: 1;
+}
+
+@keyframes adminToastCountdown {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 69.115;
+    }
+}
