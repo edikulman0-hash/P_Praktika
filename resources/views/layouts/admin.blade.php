@@ -83,6 +83,12 @@
                             <p>Отзывы</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.ratings.index') }}" class="nav-link {{ request()->routeIs('admin.ratings.*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-star"></i>
+                            <p>Оценки</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>

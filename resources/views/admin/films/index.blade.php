@@ -68,7 +68,7 @@
                         <th>Длит. (мин)</th>
                         <th>Возраст</th>
                         <th>Жанры</th>
-                        <th style="width: 180px;" class="text-right">Действия</th>
+                        <th style="width: 210px;" class="text-right">Действия</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -90,6 +90,9 @@
                                 @endforelse
                             </td>
                             <td class="text-right">
+                                <a href="{{ route('admin.ratings.index', ['film_id' => $film->id]) }}" class="btn btn-outline-warning btn-sm" title="Оценки фильма">
+                                    <i class="fas fa-star"></i>
+                                </a>
                                 <a href="{{ route('admin.reviews.index', ['film_id' => $film->id]) }}" class="btn btn-secondary btn-sm" title="Отзывы фильма">
                                     <i class="fas fa-comments"></i>
                                 </a>

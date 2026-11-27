@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CategoryFilmController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\FilmController;
+use App\Http\Controllers\Admin\RatingFilmController;
 use App\Http\Controllers\Admin\ReviewFilmController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('reviews', [ReviewFilmController::class, 'index'])->name('admin.reviews.index');
     Route::patch('reviews/{review}/approved', [ReviewFilmController::class, 'approved'])->name('admin.reviews.approved');
     Route::delete('reviews/{review}', [ReviewFilmController::class, 'destroy'])->name('admin.reviews.destroy');
+
+    Route::get('ratings', [RatingFilmController::class, 'index'])->name('admin.ratings.index');
+    Route::delete('ratings/{rating}', [RatingFilmController::class, 'destroy'])->name('admin.ratings.destroy');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 });
