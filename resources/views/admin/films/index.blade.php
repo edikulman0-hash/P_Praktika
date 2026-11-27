@@ -90,6 +90,9 @@
                                 @endforelse
                             </td>
                             <td class="text-right">
+                                <a href="{{ route('admin.reviews.index', ['film_id' => $film->id]) }}" class="btn btn-secondary btn-sm" title="Отзывы фильма">
+                                    <i class="fas fa-comments"></i>
+                                </a>
                                 <a href="{{ route('admin.films.categories.index', $film) }}" class="btn btn-info btn-sm" title="Жанры фильма">
                                     <i class="fas fa-tags"></i>
                                 </a>
