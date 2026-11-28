@@ -8,6 +8,9 @@ use App\Http\Controllers\Admin\FilmController;
 use App\Http\Controllers\Admin\RatingFilmController;
 use App\Http\Controllers\Admin\ReviewFilmController;
 use App\Http\Controllers\Admin\UserController;
+use App\Models\Film;
+use App\Models\Review as ReviewModel;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [AuthController::class, 'index'])->name('admin.login');
@@ -15,7 +18,11 @@ Route::post('/login', [AuthController::class, 'login'])->name('admin.login.post'
 
 Route::middleware('auth:admin')->group(function () {
     Route::get('/', function () {
-        return view('admin.dashboard');
+        return view('admin.dashboard', [
+            'filmsCount' => Film::count(),
+            'usersCount' => User::count(),
+            'reviewsCount' => ReviewModel::count(),
+        ]);
     })->name('admin.dashboard');
 
     Route::resource('countries', CountryController::class)

@@ -20,5 +20,4 @@ class CountryFactory extends Factory
             'name' => fake()->unique()->country(),
         ];
     }
-
 }

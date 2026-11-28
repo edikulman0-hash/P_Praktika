@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-   public function index()
+    public function index()
     {
         if (Auth::guard('admin')->check()) {
             return redirect()->route('admin.dashboard');

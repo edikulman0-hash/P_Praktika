@@ -40,7 +40,7 @@ class CountryController extends Controller
     public function update(Request $request, Country $country)
     {
         $validated = $request->validate([
-            'name' => ['required', 'string', 'max:50', 'unique:countries,name,' . $country->id],
+            'name' => ['required', 'string', 'max:50', 'unique:countries,name,'.$country->id],
         ]);
 
         $country->update($validated);

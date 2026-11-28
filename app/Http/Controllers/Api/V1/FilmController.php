@@ -35,7 +35,7 @@ class FilmController extends Controller
         }
 
         if ($search !== null && $search !== '') {
-            $query->where('name', 'like', '%' . $search . '%');
+            $query->where('name', 'like', '%'.$search.'%');
         }
 
         if ($sortBy === 'year') {
